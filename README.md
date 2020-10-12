@@ -1,46 +1,45 @@
-Recruitment Dev-QA Homework
-=========================================
+Recruitment DevQA Homework - MultiCheck
+=======================================
 
-Write end-to-end tests for this scenario:
+## Task
 
-As a user, I want to find this post https://eleduck.com/posts/ARfXq7 and see its content.
+Implement a react function component with typescript/javascript.
 
-Note: in the test, we don't know the url of this post, we have to operate as a normal user
-to navigate on the pages or search by some keywords. 
+1. use typescript/javascript + react
+1. show your best practise
+1. use github pull request to submit your code
 
-Here is an example about the steps:
+Find `TODO` in code to implement, you can also change any code in codebase to make it better.
 
-1. Visit https://eleduck.com/ from the home page
-2. We type `测试开发` on the search bar on the top right (Note: the search bar only appear if the window width > 1300px)
-3. From the search results, we look for the post which posted by `篱下采菊`
-4. We open the post and verify it has the content `自动化测试`
+## Component Requirement:
 
-Requirements:
-1. You can use typescript/javascript
-2. You can use cypress or other test framework, e.g. puppeteer, etc.
+![demo](./images/demo.png)
 
-In this repo, we preconfigured typescript + cypress, you can write the test directly in `./cypress/integration/eleduck_spec.ts`
+1. The component has a label
+2. The special `Select All` option
+   1. if checked, all other options are checked
+   2. if unchecked, all other options are unchecked
+   3. if all other options are checked, it should be checked
+   4. if any other option are unchecked, it should be unchecked
 
-Or if you can modify the code directly if you want to use other frameworks. 
+Out of scope:
 
-## For dev
+1. You don't need to provide any css style
+2. The "Select All" doesn't need extra states like "partial selected"
 
-Install the dependencies:
+## Dev
 
 ```
 npm install
+npm run dev
 ```
 
-Open cypress window, and we can choose which spec file to run, which is friendly for developing:
+## Test
 
 ```
-npm run test:open
+npm test
 ```
 
-(Note: it may be slow if you run it the first time, it needs to download the big cypress package)
-
-Or just run the spec to get the final result in one command: 
-
-```
-npm run test:run
-```
+1. Please use html native checkbox (`<input type="checkbox" />`) as the base,
+   the style doesn't need to be exactly the same
+2. No need to test `App.tsx`, only test MultiCheck and related components and code
